@@ -58,7 +58,7 @@ async def put_motor(motor_id: int, motor_data: MotorCreate, db: AsyncSessionLoca
 
 
 @router.delete("/{motor_id}", status_code=status.HTTP_204_NO_CONTENT)
-async def delete_chamado(motor_id: int, db: AsyncSessionLocal = Depends(SessionLocal)):
+async def delete_motor(motor_id: int, db: AsyncSessionLocal = Depends(SessionLocal)):
     async with db as SessionLocal:
         query = select(Motor).filter(Motor.id == motor_id)
         result = await SessionLocal.execute(query)
