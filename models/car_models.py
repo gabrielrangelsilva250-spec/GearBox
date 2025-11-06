@@ -14,3 +14,5 @@ class Car(Base):
     car_license_plate = Column(String(30))
     Type_of_brake_system =Column(String(30)) 
     price = Column(Integer)
+    motor_id = Column(Integer, ForeignKey("motores.id"), nullable=False)
+    transmission_id = Column(Integer, ForeignKey("transmission_types.id"), nullable=False)
